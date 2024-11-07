@@ -1,0 +1,161 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;EightBitHistogram_ASM.s
+    2 00000000         ; Desenvolvido para a placa EK-TM4C1294XL
+    3 00000000         
+    4 00000000         ; ------------------------------------------------------
+                       -------------------------
+    5 00000000                 THUMB                        ; Instruções do tip
+                                                            o Thumb-2
+    6 00000000         ; ------------------------------------------------------
+                       -------------------------
+    7 00000000         
+    8 00000000         ; ------------------------------------------------------
+                       -------------------------
+    9 00000000                 AREA             DATA, ALIGN = 2
+   10 00000000                 EXPORT           IMAGE_SIZE [DATA, SIZE = 16]
+   11 00000000 00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00       IMAGE_SIZE
+                               SPACE            16
+   12 00000010         
+   13 00000010                 AREA             |.text|, CODE, READONLY, ALIGN 
+= 2
+   14 00000000                 EXPORT           EightBitHistogram_ASM
+   15 00000000                 EXPORT           IMAGE_SIZE
+   16 00000000         ; ------------------------------------------------------
+                       -------------------------
+   17 00000000         EightBitHistogram_ASM
+   18 00000000 FB00 F401       MUL              R4, R0, R1  ; ;R4 <- width * he
+                                                            ight
+   19 00000004         
+   20 00000004 F64F 75FF       MOV              R5, #65535  ;
+   21 00000008 42AC            CMP              R4, R5      ;
+   22 0000000A BF28 2000       MOVHS            R0, #0      ;
+   23 0000000E D21B            BHS              EightBitHistogram_ASM_end ;
+   24 00000010         
+   25 00000010 461F            MOV              R7, R3      ;
+   26 00000012 F507 7500       ADD              R5, R7, #512 ;
+   27 00000016         p_image_initialization
+   28 00000016 F04F 0600       MOV              R6, #0      ; 0 value initializ
+                                                            ation for *p_histog
+                                                            ram
+   29 0000001A F827 6B02       STRH             R6, [R7], #2 ; ;R7 is the *p_hi
+                                                            stogram address
+   30 0000001E 42BD            CMP              R5, R7      ;
+   31 00000020 D1F9            BNE              p_image_initialization ;
+   32 00000022         
+   33 00000022 F04F 0902       MOV              R9, #2      ;
+   34 00000026 EB02 0704       ADD              R7, R2, R4  ; R7 = p_image + im
+                                                            age_size
+   35 0000002A         p_histogram_completion
+   36 0000002A F892 8000       LDRB             R8, [R2]    ; r = p_image
+   37 0000002E FB08 F809       MUL              R8, R8, R9  ;
+   38 00000032 EB03 0508       ADD              R5, R3, R8  ;
+   39 00000036 882E            LDRH             R6, [R5]    ;
+   40 00000038 F106 0601       ADD              R6, R6, #1  ;,
+   41 0000003C 802E            STRH             R6, [R5]    ;
+   42 0000003E F102 0201       ADD              R2, R2, #1  ;
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   43 00000042 4297            CMP              R7, R2      ;
+   44 00000044 D1F1            BNE              p_histogram_completion ;
+   45 00000046         
+   46 00000046 4620            MOV              R0, R4      ; return value
+   47 00000048         
+   48 00000048         EightBitHistogram_ASM_end
+   49 00000048 4770            BX               LR
+   50 0000004A         
+   51 0000004A 00 00           ALIGN
+   52 0000004C                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
+interwork --depend=.\objects\eightbithistogram_asm.d -o.\objects\eightbithistog
+ram_asm.o -I.\RTE\_EK-TM4C1294XL -IC:\Users\jhcsoares\AppData\Local\Arm\Packs\A
+RM\CMSIS\6.0.0\CMSIS\Core\Include -IC:\Users\jhcsoares\AppData\Local\Arm\Packs\
+Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129 --predefine="__EVAL SETA 1" --predef
+ine="__UVISION_VERSION SETA 539" --predefine="_RTE_ SETA 1" --predefine="TM4C12
+94NCPDT SETA 1" --predefine="_RTE_ SETA 1" --list=.\listings\eightbithistogram_
+asm.lst EightBitHistogram_ASM.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DATA 00000000
+
+Symbol: DATA
+   Definitions
+      At line 9 in file EightBitHistogram_ASM.s
+   Uses
+      None
+Comment: DATA unused
+IMAGE_SIZE 00000000
+
+Symbol: IMAGE_SIZE
+   Definitions
+      At line 11 in file EightBitHistogram_ASM.s
+   Uses
+      At line 10 in file EightBitHistogram_ASM.s
+      At line 15 in file EightBitHistogram_ASM.s
+
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 13 in file EightBitHistogram_ASM.s
+   Uses
+      None
+Comment: .text unused
+EightBitHistogram_ASM 00000000
+
+Symbol: EightBitHistogram_ASM
+   Definitions
+      At line 17 in file EightBitHistogram_ASM.s
+   Uses
+      At line 14 in file EightBitHistogram_ASM.s
+Comment: EightBitHistogram_ASM used once
+EightBitHistogram_ASM_end 00000048
+
+Symbol: EightBitHistogram_ASM_end
+   Definitions
+      At line 48 in file EightBitHistogram_ASM.s
+   Uses
+      At line 23 in file EightBitHistogram_ASM.s
+Comment: EightBitHistogram_ASM_end used once
+p_histogram_completion 0000002A
+
+Symbol: p_histogram_completion
+   Definitions
+      At line 35 in file EightBitHistogram_ASM.s
+   Uses
+      At line 44 in file EightBitHistogram_ASM.s
+Comment: p_histogram_completion used once
+p_image_initialization 00000016
+
+Symbol: p_image_initialization
+   Definitions
+      At line 27 in file EightBitHistogram_ASM.s
+   Uses
+      At line 31 in file EightBitHistogram_ASM.s
+Comment: p_image_initialization used once
+5 symbols
+342 symbols in table
