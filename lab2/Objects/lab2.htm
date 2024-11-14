@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\lab2.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\lab2.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Nov 05 23:45:29 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Nov 14 11:22:29 2024
 <BR><P>
 <H3>Maximum Stack Usage =        584 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -69,9 +69,9 @@ Global Symbols
 
 <P><STRONG><a name="[39]"></a>__scatterload_null</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
-<P><STRONG><a name="[3a]"></a>__decompress</STRONG> (Thumb, 58 bytes, Stack size unknown bytes, __dczerorl.o(!!dczerorl), UNUSED)
+<P><STRONG><a name="[3a]"></a>__decompress</STRONG> (Thumb, 100 bytes, Stack size unknown bytes, __dclz77c.o(!!dclz77c), UNUSED)
 
-<P><STRONG><a name="[3b]"></a>__decompress0</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl.o(!!dczerorl), UNUSED)
+<P><STRONG><a name="[3b]"></a>__decompress2</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dclz77c.o(!!dclz77c), UNUSED)
 
 <P><STRONG><a name="[3c]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
 
@@ -192,6 +192,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[8]"></a>EightBitHistogram_ASM</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, eightbithistogram_asm.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
 </UL>
 <P><STRONG><a name="[5d]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
@@ -398,18 +400,20 @@ Global Symbols
 <LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_send_uint16_t
 </UL>
 
-<P><STRONG><a name="[36]"></a>copy_from_flash_to_rom</STRONG> (Thumb, 24 bytes, Stack size 12 bytes, main.o(i.copy_from_flash_to_rom))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = copy_from_flash_to_rom
+<P><STRONG><a name="[36]"></a>copy_from_flash_to_ram</STRONG> (Thumb, 24 bytes, Stack size 12 bytes, main.o(i.copy_from_flash_to_ram))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = copy_from_flash_to_ram
 </UL>
 <BR>[Called By]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[15]"></a>main</STRONG> (Thumb, 68 bytes, Stack size 528 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 584<LI>Call Chain = main &rArr; SetupUart &rArr; GPIOPinTypeUART &rArr; GPIOPadConfigSet
+<P><STRONG><a name="[15]"></a>main</STRONG> (Thumb, 90 bytes, Stack size 528 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 584 + Unknown Stack Size
+<LI>Call Chain = main &rArr; SetupUart &rArr; GPIOPinTypeUART &rArr; GPIOPadConfigSet
 </UL>
 <BR>[Calls]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysCtlClockFreqSet
+<LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EightBitHistogram_ASM
 <LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_csv_file
-<LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;copy_from_flash_to_rom
+<LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;copy_from_flash_to_ram
 <LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetupUart
 <LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetupSystick
 </UL>

@@ -40,8 +40,8 @@ void send_csv_file(uint16_t *p_histogram);
 void UART_send_uint16_t(uint16_t number);
 
 //RAM definitions
-unsigned long ram_buffer[76/4];
-void copy_from_flash_to_rom(void *source, void *destiny, int size);
+unsigned long ram_buffer[72/4];
+void copy_from_flash_to_ram(void *source, void *destiny, int size);
 typedef uint16_t (*ram_function_t)(uint16_t, uint16_t, uint8_t*, uint16_t*);
 
 int main(void)
@@ -56,30 +56,30 @@ int main(void)
 	
 	//copying EightBitHistogram_ASM to RAM
 	//-1 because of THUMB instructions
-	copy_from_flash_to_rom((void*)((int)EightBitHistogram_ASM - 1), (void*)ram_buffer, 76);
+	copy_from_flash_to_ram((void*)((int)EightBitHistogram_ASM-1), (void*)ram_buffer, 72);
 	
-	//EightBitHistogram_ASM_ram points to ram_buffer
+//	//EightBitHistogram_ASM_ram points to ram_buffer
 	ram_function_t EightBitHistogram_ASM_ram;
-	EightBitHistogram_ASM_ram = (ram_function_t)((int)ram_buffer + 1);
+	EightBitHistogram_ASM_ram = (ram_function_t)((int)ram_buffer+1);
 	
 	uint16_t histogram[256];
 
-//	uint16_t image0_size = EightBitHistogram_C(HEIGHT0, WIDTH0, image0, histogram);
-//	send_csv_file(histogram);
+////	uint16_t image0_size = EightBitHistogram_C(HEIGHT0, WIDTH0, image0, histogram);
+////	send_csv_file(histogram);
 //	
 //	uint16_t image1_size = EightBitHistogram_C(HEIGHT1, WIDTH1, image1, histogram);
 //	send_csv_file(histogram);
 //	
-//	uint16_t image0_size_asm = EightBitHistogram_ASM(HEIGHT0, WIDTH0, image0, histogram);
-//	send_csv_file(histogram);
-//	
-//	uint16_t image1_size_asm = EightBitHistogram_ASM(HEIGHT1, WIDTH1, image1, histogram);
-//	send_csv_file(histogram);
-//	
-	uint16_t image0_size_ASM_ram = EightBitHistogram_ASM_ram(HEIGHT0, WIDTH0, image0, histogram);
+	uint16_t image0_size_asm = EightBitHistogram_ASM(HEIGHT0, WIDTH0, (uint8_t*)image0, histogram);
 	send_csv_file(histogram);
 	
-//	uint16_t image1_size_ASM_ram = EightBitHistogram_ASM_ram(HEIGHT1, WIDTH1, image1, histogram);
+	uint16_t image1_size_asm = EightBitHistogram_ASM(HEIGHT1, WIDTH1, (uint8_t*)image1, histogram);
+	send_csv_file(histogram);
+//	
+//	uint16_t image0_size_ASM_ram = EightBitHistogram_ASM_ram(HEIGHT0, WIDTH0, (uint8_t*)image0, histogram);
+//	send_csv_file(histogram);
+	
+//	uint16_t image1_size_ASM_ram = EightBitHistogram_ASM_ram(HEIGHT1, WIDTH1, (uint8_t*)image1, histogram);
 //	send_csv_file(histogram);
 }
 
@@ -141,12 +141,18 @@ uint16_t EightBitHistogram_C(uint16_t width, uint16_t height, uint8_t *p_image, 
 	
 	//clear histogram
 	uint16_t i = 0;
-	for(i = 0; i < HISTOGRAM_SIZE; i++)
+	for(i = 0; i < 256; i++)
 		p_histogram[i] = 0;
 	
-	//calculate histogram
-	for(i = 0; i < image_size; i++)
-		p_histogram[p_image[i]]++;
+	uint16_t j = 0;
+	for(i = 0; i < height; i++)
+	{
+		for(j = 0; j < width; j++)
+		{
+			uint8_t value = p_image[i * width + j];
+			p_histogram[value]++;
+		}
+	}
 	
 	//return image size
 	return image_size;
@@ -194,10 +200,10 @@ void UART_send_uint16_t(uint16_t number)
 	UARTCharPut(UART0_BASE, (number % 10) + '0');
 }
 
-void copy_from_flash_to_rom(void *source, void *destiny, int size)
+void copy_from_flash_to_ram(void *source, void *destiny, int size)
 {
-	uint8_t *source_uint8_t = (uint8_t*)source;
-	uint8_t *destiny_uint8_t = (uint8_t*)destiny;
+	uint8_t *source_uint8_t = source;
+	uint8_t *destiny_uint8_t = destiny;
 	
 	while(size)
 	{

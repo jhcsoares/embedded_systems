@@ -29,23 +29,18 @@ Project File Date:  11/05/2024
 Rebuild target 'EK-TM4C1294XL'
 assembling startup_rvmdk.S...
 compiling images.c...
-images.h(18): warning:  #1-D: last line of file ends without a newline
-  #endif // IMAGE_H
-images.c: 1 warning, 0 errors
 compiling main.c...
-images.h(18): warning:  #1-D: last line of file ends without a newline
-  #endif // IMAGE_H
-main.c(79): warning:  #167-D: argument of type "const uint8_t (*)[4]" is incompatible with parameter of type "uint8_t *"
-  	uint16_t image0_size_ASM_ram = EightBitHistogram_ASM_ram(HEIGHT0, WIDTH0, image0, histogram);
-main.c: 2 warnings, 0 errors
+main.c(62): warning:  #550-D: variable "EightBitHistogram_ASM_ram"  was set but never used
+  	ram_function_t EightBitHistogram_ASM_ram;
+main.c: 1 warning, 0 errors
 assembling EightBitHistogram_ASM.s...
 linking...
-Program Size: Code=3326 RO-data=20790 RW-data=1644 ZI-data=684  
+Program Size: Code=3392 RO-data=1576 RW-data=20076 ZI-data=684  
 FromELF: creating hex file...
 After Build - User command #1: fromelf.exe --bin Objects\MyBlinky.axf --output Objects\lab2.bin
 "Objects\MyBlinky.axf": Error: Q0122E: Could not open file 'Objects\MyBlinky.axf': No such file or directory
 Finished: 0 information, 0 warning and 1 error messages.
-".\Objects\lab2.axf" - 0 Error(s), 3 Warning(s).
+".\Objects\lab2.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -68,7 +63,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE@6.0.0
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>
