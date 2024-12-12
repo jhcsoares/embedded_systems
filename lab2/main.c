@@ -20,7 +20,7 @@ Laboratório 2 - Sistemas Embarcados
 
 
 //variável que conta os ticks(1ms) - Volatile não permite o compilador otimizar o código 
-static volatile unsigned int SysTicks;
+volatile unsigned int SysTicks;
 
 //variável para receber o retorno do cfg do clk
 uint32_t SysClock;
@@ -33,16 +33,18 @@ void UART_Interruption_Handler(void);
 
 //ASM
 uint16_t EightBitHistogram_ASM(uint16_t width, uint16_t height, uint8_t *p_image, uint16_t *p_histogram);
-extern uint16_t IMAGE_SIZE;
 
+//C
 uint16_t EightBitHistogram_C(uint16_t width, uint16_t height, uint8_t *p_image, uint16_t *p_histogram);
 void send_csv_file(uint16_t *p_histogram);
 void UART_send_uint16_t(uint16_t number);
 
 //RAM definitions
-unsigned long ram_buffer[72/4];
 void copy_from_flash_to_ram(void *source, void *destiny, int size);
 typedef uint16_t (*ram_function_t)(uint16_t, uint16_t, uint8_t*, uint16_t*);
+volatile unsigned long ram_buffer[72/4];
+ram_function_t EightBitHistogram_ASM_ram;
+
 
 int main(void)
 {
@@ -56,31 +58,31 @@ int main(void)
 	
 	//copying EightBitHistogram_ASM to RAM
 	//-1 because of THUMB instructions
-	copy_from_flash_to_ram((void*)((int)EightBitHistogram_ASM-1), (void*)ram_buffer, 72);
+	copy_from_flash_to_ram((void*)EightBitHistogram_ASM, (void*)ram_buffer, 72);
 	
-//	//EightBitHistogram_ASM_ram points to ram_buffer
-	ram_function_t EightBitHistogram_ASM_ram;
 	EightBitHistogram_ASM_ram = (ram_function_t)((int)ram_buffer+1);
 	
 	uint16_t histogram[256];
 
-////	uint16_t image0_size = EightBitHistogram_C(HEIGHT0, WIDTH0, image0, histogram);
-////	send_csv_file(histogram);
-//	
-//	uint16_t image1_size = EightBitHistogram_C(HEIGHT1, WIDTH1, image1, histogram);
+//	uint16_t image0_size = EightBitHistogram_C(HEIGHT0, WIDTH0, (uint8_t*)image0, histogram);
 //	send_csv_file(histogram);
 //	
-	uint16_t image0_size_asm = EightBitHistogram_ASM(HEIGHT0, WIDTH0, (uint8_t*)image0, histogram);
-	send_csv_file(histogram);
-	
-	uint16_t image1_size_asm = EightBitHistogram_ASM(HEIGHT1, WIDTH1, (uint8_t*)image1, histogram);
-	send_csv_file(histogram);
+//	uint16_t image1_size = EightBitHistogram_C(HEIGHT1, WIDTH1, (uint8_t*)image1, histogram);
+//	send_csv_file(histogram);
 //	
+//	uint16_t image0_size_asm = EightBitHistogram_ASM(HEIGHT0, WIDTH0, (uint8_t*)image0, histogram);
+//	send_csv_file(histogram);
+//	
+//	uint16_t image1_size_asm = EightBitHistogram_ASM(HEIGHT1, WIDTH1, (uint8_t*)image1, histogram);
+//	send_csv_file(histogram);
+	
 //	uint16_t image0_size_ASM_ram = EightBitHistogram_ASM_ram(HEIGHT0, WIDTH0, (uint8_t*)image0, histogram);
 //	send_csv_file(histogram);
+//	
+	uint16_t image1_size_ASM_ram = EightBitHistogram_ASM_ram(HEIGHT1, WIDTH1, (uint8_t*)image1, histogram);
+	send_csv_file(histogram);
 	
-//	uint16_t image1_size_ASM_ram = EightBitHistogram_ASM_ram(HEIGHT1, WIDTH1, (uint8_t*)image1, histogram);
-//	send_csv_file(histogram);
+	return 0;
 }
 
 //função de tratamento da interrupção do SysTick
@@ -98,7 +100,7 @@ void SetupSystick(void)
   SysTickDisable();
 	
   //clock 40MHz <=> SysTick deve contar 1ms=40k-1 do Systick_Counter - 12 trocas de contexto PP->IRQ - (1T Mov, 1T Movt, 3T LDR, 1T INC ... STR e IRQ->PP já não contabilizam atrasos para a variável)  
-  SysTickPeriodSet(40000-1-12-6);
+  SysTickPeriodSet(120000-1-12-6);
 	
   //registra a função de atendimento da interrupção
   SysTickIntRegister(SysTickIntHandler);
@@ -205,6 +207,7 @@ void copy_from_flash_to_ram(void *source, void *destiny, int size)
 	uint8_t *source_uint8_t = source;
 	uint8_t *destiny_uint8_t = destiny;
 	
+	source_uint8_t--;
 	while(size)
 	{
 		*destiny_uint8_t = *source_uint8_t;

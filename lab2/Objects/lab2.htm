@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\lab2.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\lab2.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Nov 14 11:22:29 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Dec 04 08:30:21 2024
 <BR><P>
 <H3>Maximum Stack Usage =        584 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -13,8 +13,8 @@ __rt_entry_main &rArr; main &rArr; SetupUart &rArr; GPIOPinTypeUART &rArr; GPIOP
 Functions with no stack information
 </H3><UL>
  <LI><a href="#[9]">Reset_Handler</a>
- <LI><a href="#[1c]">__user_initial_stackheap</a>
  <LI><a href="#[8]">EightBitHistogram_ASM</a>
+ <LI><a href="#[1c]">__user_initial_stackheap</a>
  <LI><a href="#[3]">NmiSR</a>
  <LI><a href="#[4]">FaultISR</a>
  <LI><a href="#[5]">IntDefaultHandler</a>
@@ -69,9 +69,9 @@ Global Symbols
 
 <P><STRONG><a name="[39]"></a>__scatterload_null</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
-<P><STRONG><a name="[3a]"></a>__decompress</STRONG> (Thumb, 100 bytes, Stack size unknown bytes, __dclz77c.o(!!dclz77c), UNUSED)
+<P><STRONG><a name="[3a]"></a>__decompress</STRONG> (Thumb, 58 bytes, Stack size unknown bytes, __dczerorl.o(!!dczerorl), UNUSED)
 
-<P><STRONG><a name="[3b]"></a>__decompress2</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dclz77c.o(!!dclz77c), UNUSED)
+<P><STRONG><a name="[3b]"></a>__decompress0</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl.o(!!dczerorl), UNUSED)
 
 <P><STRONG><a name="[3c]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
 
@@ -187,15 +187,15 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
 </UL>
 
-<P><STRONG><a name="[1c]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_rvmdk.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
-</UL>
-
 <P><STRONG><a name="[8]"></a>EightBitHistogram_ASM</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, eightbithistogram_asm.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
 </UL>
+<P><STRONG><a name="[1c]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_rvmdk.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+</UL>
+
 <P><STRONG><a name="[5d]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
 <P><STRONG><a name="[5e]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
@@ -273,7 +273,7 @@ Global Symbols
 <LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickIntRegister
 </UL>
 
-<P><STRONG><a name="[21]"></a>SetupSystick</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, main.o(i.SetupSystick))
+<P><STRONG><a name="[21]"></a>SetupSystick</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, main.o(i.SetupSystick))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = SetupSystick &rArr; SysTickIntRegister &rArr; IntRegister
 </UL>
 <BR>[Calls]<UL><LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickPeriodSet
@@ -400,22 +400,22 @@ Global Symbols
 <LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_send_uint16_t
 </UL>
 
-<P><STRONG><a name="[36]"></a>copy_from_flash_to_ram</STRONG> (Thumb, 24 bytes, Stack size 12 bytes, main.o(i.copy_from_flash_to_ram))
+<P><STRONG><a name="[36]"></a>copy_from_flash_to_ram</STRONG> (Thumb, 28 bytes, Stack size 12 bytes, main.o(i.copy_from_flash_to_ram))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = copy_from_flash_to_ram
 </UL>
 <BR>[Called By]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[15]"></a>main</STRONG> (Thumb, 90 bytes, Stack size 528 bytes, main.o(i.main))
+<P><STRONG><a name="[15]"></a>main</STRONG> (Thumb, 92 bytes, Stack size 528 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 584 + Unknown Stack Size
 <LI>Call Chain = main &rArr; SetupUart &rArr; GPIOPinTypeUART &rArr; GPIOPadConfigSet
 </UL>
 <BR>[Calls]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysCtlClockFreqSet
-<LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EightBitHistogram_ASM
 <LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_csv_file
 <LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;copy_from_flash_to_ram
 <LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetupUart
 <LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetupSystick
+<LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EightBitHistogram_ASM
 </UL>
 <BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>

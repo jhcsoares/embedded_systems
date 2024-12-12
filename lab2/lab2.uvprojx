@@ -83,7 +83,7 @@
           <AfterMake>
             <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name>fromelf.exe --bin Objects\MyBlinky.axf --output Objects\lab2.bin</UserProg1Name>
+            <UserProg1Name>fromelf.exe --bin Objects\lab2.axf --output Objects\lab2.bin</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -386,14 +386,9 @@
           <GroupName>Source</GroupName>
           <Files>
             <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>startup_rvmdk.S</FileName>
+              <FileName>EightBitHistogram_ASM.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\startup_rvmdk.S</FilePath>
+              <FilePath>.\EightBitHistogram_ASM.s</FilePath>
             </File>
             <File>
               <FileName>images.c</FileName>
@@ -406,9 +401,14 @@
               <FilePath>.\images.h</FilePath>
             </File>
             <File>
-              <FileName>EightBitHistogram_ASM.s</FileName>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>startup_rvmdk.S</FileName>
               <FileType>2</FileType>
-              <FilePath>.\EightBitHistogram_ASM.s</FilePath>
+              <FilePath>.\startup_rvmdk.S</FilePath>
             </File>
           </Files>
         </Group>

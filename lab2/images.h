@@ -11,8 +11,8 @@
 #define WIDTH1 160
 #define HEIGHT1 120
 
-extern uint8_t image0[HEIGHT0][WIDTH0];
+extern const uint8_t image0[HEIGHT0][WIDTH0];
 
-extern uint8_t image1[HEIGHT1][WIDTH1];
+extern const uint8_t image1[HEIGHT1][WIDTH1];
 
 #endif // IMAGE_H
