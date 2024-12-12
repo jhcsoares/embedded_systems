@@ -1,0 +1,62 @@
+Dependencies for Project 'lab3', Target 'EK-TM4C1294XL': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCompiler_5_06v7
+F (.\readme.txt)(0x674B84B6)()
+F (..\TivaWare_C_Series-2.2.0.295\driverlib\rvmdk\driverlib.lib)(0x672033C6)()
+F (.\globals.h)(0x674FC83F)()
+F (.\main.c)(0x67522DE8)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdio.h)(0x5E8ED772)
+I (clock.h)(0x674F4768)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdbool.h)(0x5E8ED772)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/sysctl.h)(0x671E68A7)
+I (globals.h)(0x674FC83F)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+I (gpio.h)(0x674F3ADA)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/gpio.h)(0x671E68A7)
+I (keyboard.h)(0x674FB3DF)
+I (lcd.h)(0x67522E52)
+I (sys_tick.h)(0x674F3FD9)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/systick.h)(0x671E68A7)
+F (.\startup_rvmdk.S)(0x623C81B7)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129--pd "__UVISION_VERSION SETA 539" --pd "_RTE_ SETA 1" --pd "TM4C1294NCPDT SETA 1" --pd "_RTE_ SETA 1"--list .\listings\startup_rvmdk.lst --xref -o .\objects\startup_rvmdk.o --depend .\objects\startup_rvmdk.d)
+F (.\lcd.c)(0x6752313B)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\lcd.o --omf_browse .\objects\lcd.crf --depend .\objects\lcd.d)
+I (lcd.h)(0x67522E52)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdbool.h)(0x5E8ED772)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/gpio.h)(0x671E68A7)
+I (globals.h)(0x674FC83F)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+I (sys_tick.h)(0x674F3FD9)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/systick.h)(0x671E68A7)
+F (.\lcd.h)(0x67522E52)()
+F (.\sys_tick.c)(0x674F3FD7)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\sys_tick.o --omf_browse .\objects\sys_tick.crf --depend .\objects\sys_tick.d)
+I (sys_tick.h)(0x674F3FD9)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/systick.h)(0x671E68A7)
+I (globals.h)(0x674FC83F)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+F (.\sys_tick.h)(0x674F3FD9)()
+F (.\gpio.c)(0x674FC9B0)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\gpio.o --omf_browse .\objects\gpio.crf --depend .\objects\gpio.d)
+I (gpio.h)(0x674F3ADA)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdbool.h)(0x5E8ED772)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/gpio.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/sysctl.h)(0x671E68A7)
+I (globals.h)(0x674FC83F)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+F (.\gpio.h)(0x674F3ADA)()
+F (.\clock.c)(0x674F358A)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\clock.o --omf_browse .\objects\clock.crf --depend .\objects\clock.d)
+I (clock.h)(0x674F4768)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdbool.h)(0x5E8ED772)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/sysctl.h)(0x671E68A7)
+I (globals.h)(0x674FC83F)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+F (.\clock.h)(0x674F4768)()
+F (.\keyboard.c)(0x674FB60E)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\keyboard.o --omf_browse .\objects\keyboard.crf --depend .\objects\keyboard.d)
+I (keyboard.h)(0x674FB3DF)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdbool.h)(0x5E8ED772)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/gpio.h)(0x671E68A7)
+I (globals.h)(0x674FC83F)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+F (.\keyboard.h)(0x674FB3DF)()

@@ -1,0 +1,14 @@
+.\objects\main.o: main.c
+.\objects\main.o: C:\Keil_v5\ARM\ARMCompiler_5_06v7\Bin\..\include\stdio.h
+.\objects\main.o: clock.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCompiler_5_06v7\Bin\..\include\stdbool.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCompiler_5_06v7\Bin\..\include\stdint.h
+.\objects\main.o: ..\TivaWare_C_Series-2.2.0.295\driverlib/sysctl.h
+.\objects\main.o: globals.h
+.\objects\main.o: ..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h
+.\objects\main.o: gpio.h
+.\objects\main.o: ..\TivaWare_C_Series-2.2.0.295\driverlib/gpio.h
+.\objects\main.o: keyboard.h
+.\objects\main.o: lcd.h
+.\objects\main.o: sys_tick.h
+.\objects\main.o: ..\TivaWare_C_Series-2.2.0.295\driverlib/systick.h
