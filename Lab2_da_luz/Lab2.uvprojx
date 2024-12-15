@@ -400,9 +400,9 @@
               <FilePath>.\images.c</FilePath>
             </File>
             <File>
-              <FileName>EightBitHistogramV3.s</FileName>
+              <FileName>EightBitHistogram_ASM.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\EightBitHistogramV3.s</FilePath>
+              <FilePath>.\EightBitHistogram_ASM.s</FilePath>
             </File>
           </Files>
         </Group>

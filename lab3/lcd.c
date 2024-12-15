@@ -26,6 +26,92 @@ void lcd_data(uint8_t data)
 }
 
 
+void lcd_define_custom_chars(void)
+{
+	// Setup for battery characters
+	
+  lcd_command(0x40);
+	lcd_data(0x0E);
+	lcd_data(0x1B);
+	lcd_data(0x11);
+	lcd_data(0x11);
+	lcd_data(0x11);
+	lcd_data(0x11);
+	lcd_data(0x11);
+	lcd_data(0x1F);
+
+	lcd_command(0x48);
+	lcd_data(0x0E);
+	lcd_data(0x1B);
+	lcd_data(0x11);
+	lcd_data(0x11);
+	lcd_data(0x11);
+	lcd_data(0x11);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+
+	lcd_command(0x50);
+	lcd_data(0x0E);
+	lcd_data(0x1B);
+	lcd_data(0x11);
+	lcd_data(0x11);
+	lcd_data(0x11);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+
+	lcd_command(0x58);
+	lcd_data(0x0E);
+	lcd_data(0x1B);
+	lcd_data(0x11);
+	lcd_data(0x11);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+
+	lcd_command(0x60);
+	lcd_data(0x0E);
+	lcd_data(0x1B);
+	lcd_data(0x11);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+
+	lcd_command(0x68);
+	lcd_data(0x0E);
+	lcd_data(0x1B);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+
+	lcd_command(0x70);
+	lcd_data(0x0E);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+	lcd_data(0x1F);
+
+	lcd_data(0x04);
+	lcd_data(0x0E);
+	lcd_data(0x0E);
+	lcd_data(0x0E);
+	lcd_data(0x0E);
+	lcd_data(0x1F);
+	lcd_data(0x00);
+	lcd_data(0x04);
+	lcd_command(0x78);
+}
+
+
 void lcd_print_char(char c)
 {
 	lcd_write(c, 0x5, 40);
@@ -44,18 +130,20 @@ void lcd_print_string(char* string)
 
 
 void lcd_setup(void)
-{
+{	
 	// 0x38 -> LCD initialization = 0x20 / 8 bits mode = 0x10 / 2 lines = 0x08
 	lcd_write(0x38, 0x4, 40);
 	
 	// 0x06 -> Cursor right autoincrement
 	lcd_write(0x06, 0x4, 40);
 	
-	// 0xF -> Cursor initialization = 0x08 / Display enable = 0x04 / Cursor enable = 0x02 / Cursor blinking = 0x01
-	lcd_write(0xF, 0x4, 40);
+	// 0xE -> Cursor initialization = 0x08 / Display enable = 0x04 / Cursor enable = 0x02
+	lcd_write(0xE, 0x4, 40);
 	
 	// 0x01 -> Display reset
-	lcd_write(0x01, 0x4, 3000);
+	lcd_write(0x01, 0x4, 500000);
+	
+	lcd_define_custom_chars();
 }
 
 

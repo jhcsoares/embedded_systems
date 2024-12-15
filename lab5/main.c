@@ -60,6 +60,8 @@ int main(void)
 			if(pressed_key == '#')
 			{
 				set_led_duty_cycle();
+				
+				// Reset keyboard buffer
 				keyboard_buffer[0] = '0';
 				keyboard_buffer[1] = '0';
 			}
@@ -92,10 +94,12 @@ int main(void)
 		// OLED7 update
 		OLED7_sendStrXYI("Duty cycle: ", 0, 0);
 		OLED7_send8BitNumber(current_duty_cycle_pct, 0, 12);
+		OLED7_sendCharXYI('%', 0, 14);
 		
 		OLED7_sendStrXYI("DC buffer: ", 1, 0);
 		OLED7_sendCharXYI(keyboard_buffer[0], 1, 11);
 		OLED7_sendCharXYI(keyboard_buffer[1], 1, 12);
+		OLED7_sendCharXYI('%', 1, 13);
 	}
 }
 

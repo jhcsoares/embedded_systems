@@ -10,6 +10,7 @@
 
 void lcd_command(uint8_t command);
 void lcd_data(uint8_t data);
+void lcd_define_custom_chars(void);
 void lcd_setup(void);
 void lcd_new_line(void);
 void lcd_print_char(char c);

@@ -17,15 +17,14 @@ int main()
 	gpio_setup();
 	sys_tick_setup();
 	lcd_setup();
-	
-	
+
 	lcd_print_string("ELF52-DaLuz:");
 	
 	// Battery sequence print
-	lcd_print_char(0x00);
-	lcd_print_char(0x02);
-	lcd_print_char(0x04);
-	lcd_print_char(0x06);
+	lcd_write(0x00, 0x5, 40);
+	lcd_write(0x02, 0x5, 40);
+	lcd_write(0x04, 0x5, 40);
+	lcd_write(0x06, 0x5, 40);
 	
 	lcd_new_line();
 	lcd_print_string("Key: ");

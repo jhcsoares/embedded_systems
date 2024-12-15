@@ -2,7 +2,7 @@
 ".\objects\main.o"
 ".\objects\startup_rvmdk.o"
 ".\objects\images.o"
-".\objects\eightbithistogramv3.o"
+".\objects\eightbithistogram_asm.o"
 "..\TivaWare_C_Series-2.2.0.295\driverlib\rvmdk\driverlib.lib"
 --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict
 --entry Reset_Handler --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

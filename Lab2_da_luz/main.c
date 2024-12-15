@@ -44,17 +44,17 @@ int main(void)
 	
 	uint16_t histogram[256];
 
-//	uint16_t image0_size = EightBitHistogram_C(HEIGHT0, WIDTH0, (uint8_t*)image0, histogram);
-//	send_csv_file(histogram);
-//	
-//	uint16_t image1_size = EightBitHistogram_C(HEIGHT1, WIDTH1, (uint8_t*)image1, histogram);
-//	send_csv_file(histogram);
-//	
-//	uint16_t image0_size_asm = EightBitHistogram_ASM(HEIGHT0, WIDTH0, (uint8_t*)image0, histogram);
-//	send_csv_file(histogram);
-//	
-//	uint16_t image1_size_asm = EightBitHistogram_ASM(HEIGHT1, WIDTH1, (uint8_t*)image1, histogram);
-//	send_csv_file(histogram);
+	uint16_t image0_size = EightBitHistogram_C(HEIGHT0, WIDTH0, (uint8_t*)image0, histogram);
+	send_csv_file(histogram);
+	
+	uint16_t image1_size = EightBitHistogram_C(HEIGHT1, WIDTH1, (uint8_t*)image1, histogram);
+	send_csv_file(histogram);
+	
+	uint16_t image0_size_asm = EightBitHistogram_ASM(HEIGHT0, WIDTH0, (uint8_t*)image0, histogram);
+	send_csv_file(histogram);
+	
+	uint16_t image1_size_asm = EightBitHistogram_ASM(HEIGHT1, WIDTH1, (uint8_t*)image1, histogram);
+	send_csv_file(histogram);
 	
 	uint16_t image0_size_ASM_ram = EightBitHistogram_ASM_ram(HEIGHT0, WIDTH0, (uint8_t*)image0, histogram);
 	send_csv_file(histogram);
