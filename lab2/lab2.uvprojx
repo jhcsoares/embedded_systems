@@ -391,16 +391,6 @@
               <FilePath>.\EightBitHistogram_ASM.s</FilePath>
             </File>
             <File>
-              <FileName>images.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\images.c</FilePath>
-            </File>
-            <File>
-              <FileName>images.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\images.h</FilePath>
-            </File>
-            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
@@ -409,6 +399,16 @@
               <FileName>startup_rvmdk.S</FileName>
               <FileType>2</FileType>
               <FilePath>.\startup_rvmdk.S</FilePath>
+            </File>
+            <File>
+              <FileName>images.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\images.h</FilePath>
+            </File>
+            <File>
+              <FileName>images.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\images.c</FilePath>
             </File>
           </Files>
         </Group>

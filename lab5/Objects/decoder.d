@@ -1,0 +1,14 @@
+.\objects\decoder.o: decoder.c
+.\objects\decoder.o: decoder.h
+.\objects\decoder.o: C:\Keil_v5\ARM\ARMCompiler_5_06v7\Bin\..\include\stdbool.h
+.\objects\decoder.o: C:\Keil_v5\ARM\ARMCompiler_5_06v7\Bin\..\include\stdint.h
+.\objects\decoder.o: globals.h
+.\objects\decoder.o: ..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h
+.\objects\decoder.o: led.h
+.\objects\decoder.o: ..\TivaWare_C_Series-2.2.0.295\driverlib/gpio.h
+.\objects\decoder.o: ..\TivaWare_C_Series-2.2.0.295\driverlib/sysctl.h
+.\objects\decoder.o: pwm.h
+.\objects\decoder.o: ..\TivaWare_C_Series-2.2.0.295\driverlib/pwm.h
+.\objects\decoder.o: uart_.h
+.\objects\decoder.o: ..\TivaWare_C_Series-2.2.0.295\driverlib/pin_map.h
+.\objects\decoder.o: ..\TivaWare_C_Series-2.2.0.295\driverlib/uart.h

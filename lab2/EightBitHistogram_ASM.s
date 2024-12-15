@@ -8,9 +8,9 @@
 ; -------------------------------------------------------------------------------
 		PRESERVE8
 		AREA |.text|, CODE, READONLY, ALIGN = 2
-        EXPORT EightBitHistogram_ASM
+        EXPORT EightBitHistogramV3
 ; -------------------------------------------------------------------------------
-EightBitHistogram_ASM
+EightBitHistogramV3
     MUL R4, R0, R1       ; R4 = width * height
     MOV R5, #65535
     CMP R4, R5

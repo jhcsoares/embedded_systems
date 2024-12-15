@@ -19,10 +19,10 @@ ARM Macro Assembler    Page 1
     9 00000000                 PRESERVE8
    10 00000000                 AREA             |.text|, CODE, READONLY, ALIGN 
 = 2
-   11 00000000                 EXPORT           EightBitHistogram_ASM
+   11 00000000                 EXPORT           EightBitHistogramV3
    12 00000000         ; ------------------------------------------------------
                        -------------------------
-   13 00000000         EightBitHistogram_ASM
+   13 00000000         EightBitHistogramV3
    14 00000000 FB00 F401       MUL              R4, R0, R1  ; R4 = width * heig
                                                             ht
    15 00000004 F64F 75FF       MOV              R5, #65535
@@ -99,14 +99,14 @@ Symbol: .text
    Uses
       None
 Comment: .text unused
-EightBitHistogram_ASM 00000000
+EightBitHistogramV3 00000000
 
-Symbol: EightBitHistogram_ASM
+Symbol: EightBitHistogramV3
    Definitions
       At line 13 in file EightBitHistogram_ASM.s
    Uses
       At line 11 in file EightBitHistogram_ASM.s
-Comment: EightBitHistogram_ASM used once
+Comment: EightBitHistogramV3 used once
 EightBitHistogram_ASM_end 00000044
 
 Symbol: EightBitHistogram_ASM_end

@@ -6,9 +6,8 @@ Laboratório 2 - Sistemas Embarcados
 //TivaWare uC: Usado internamente para identificar o uC em alguns .h da TivaWare
 #define PART_TM4C1294NCPDT 1
 
-#include "images.h"
-
 #include <stdint.h>
+#include <stdio.h>
 #include <stdbool.h>
 #include "inc/hw_memmap.h"
 #include "driverlib/debug.h"
@@ -17,50 +16,34 @@ Laboratório 2 - Sistemas Embarcados
 #include "driverlib/systick.h"
 #include "driverlib/uart.h"
 #include "driverlib/pin_map.h"
-
-
-//variável que conta os ticks(1ms) - Volatile não permite o compilador otimizar o código 
-volatile unsigned int SysTicks;
+#include "images.h"
 
 //variável para receber o retorno do cfg do clk
 uint32_t SysClock;
 
-//Protótipos de funções criadas no programa, código depois do main
-void SetupSystick(void);
-void SysTickIntHandler(void);
+typedef uint16_t (*ram_function_t)(uint16_t, uint16_t, uint8_t*, uint16_t*);
+volatile unsigned long ram_buffer[72/4];
+ram_function_t EightBitHistogram_ASM_ram = (ram_function_t)ram_buffer;
+
+// Prototipos
 void SetupUart(void);
 void UART_Interruption_Handler(void);
-
-//ASM
-uint16_t EightBitHistogram_ASM(uint16_t width, uint16_t height, uint8_t *p_image, uint16_t *p_histogram);
-
-//C
 uint16_t EightBitHistogram_C(uint16_t width, uint16_t height, uint8_t *p_image, uint16_t *p_histogram);
 void send_csv_file(uint16_t *p_histogram);
 void UART_send_uint16_t(uint16_t number);
-
-//RAM definitions
 void copy_from_flash_to_ram(void *source, void *destiny, int size);
-typedef uint16_t (*ram_function_t)(uint16_t, uint16_t, uint8_t*, uint16_t*);
-volatile unsigned long ram_buffer[72/4];
-ram_function_t EightBitHistogram_ASM_ram;
+
+
+extern uint16_t EightBitHistogram_ASM(uint16_t width, uint16_t height, uint8_t *p_image, uint16_t *p_histogram);
 
 
 int main(void)
 {
   SysClock = SysCtlClockFreqSet((SYSCTL_XTAL_25MHZ | SYSCTL_OSC_MAIN | SYSCTL_USE_PLL | SYSCTL_CFG_VCO_240), 120000000);
-	
-  //executa configuração e inicialização do SysTick
-  SetupSystick();
-	
-	//executa configuração e inicialização da UART
 	SetupUart();
 	
-	//copying EightBitHistogram_ASM to RAM
-	//-1 because of THUMB instructions
+	EightBitHistogram_ASM_ram = (ram_function_t)((unsigned long)EightBitHistogram_ASM_ram + (unsigned long)0x00000001);
 	copy_from_flash_to_ram((void*)EightBitHistogram_ASM, (void*)ram_buffer, 72);
-	
-	EightBitHistogram_ASM_ram = (ram_function_t)((int)ram_buffer+1);
 	
 	uint16_t histogram[256];
 
@@ -78,39 +61,17 @@ int main(void)
 	
 //	uint16_t image0_size_ASM_ram = EightBitHistogram_ASM_ram(HEIGHT0, WIDTH0, (uint8_t*)image0, histogram);
 //	send_csv_file(histogram);
-//	
-	uint16_t image1_size_ASM_ram = EightBitHistogram_ASM_ram(HEIGHT1, WIDTH1, (uint8_t*)image1, histogram);
-	send_csv_file(histogram);
+//
+	while(1)
+	{
+		uint16_t image1_size_ASM_ram = EightBitHistogram_ASM_ram(HEIGHT1, WIDTH1, (uint8_t*)image1, histogram);
+		send_csv_file(histogram);
+		break;
+	}
 	
 	return 0;
 }
 
-//função de tratamento da interrupção do SysTick
-void SysTickIntHandler(void)
-{
-  SysTicks++;
-}
-
-//função para configurar e inicializar o periférico Systick a 1ms
-void SetupSystick(void)
-{
-  SysTicks=0;
-	
-  //desliga o SysTick para poder configurar
-  SysTickDisable();
-	
-  //clock 40MHz <=> SysTick deve contar 1ms=40k-1 do Systick_Counter - 12 trocas de contexto PP->IRQ - (1T Mov, 1T Movt, 3T LDR, 1T INC ... STR e IRQ->PP já não contabilizam atrasos para a variável)  
-  SysTickPeriodSet(120000-1-12-6);
-	
-  //registra a função de atendimento da interrupção
-  SysTickIntRegister(SysTickIntHandler);
-	
-  //liga o atendimento via interrupção
-  SysTickIntEnable();
-	
-  //liga novamente o SysTick
-  SysTickEnable();
-}
 
 void SetupUart(void)
 {
@@ -208,11 +169,15 @@ void copy_from_flash_to_ram(void *source, void *destiny, int size)
 	uint8_t *destiny_uint8_t = destiny;
 	
 	source_uint8_t--;
-	while(size)
-	{
-		*destiny_uint8_t = *source_uint8_t;
-		destiny_uint8_t++;
-		source_uint8_t++;
-		size--;
-	}
+	
+	while(size--)
+		*destiny_uint8_t++ = *source_uint8_t++;
+	
+//	while(size)
+//	{
+//		*destiny_uint8_t = *source_uint8_t;
+//		destiny_uint8_t++;
+//		source_uint8_t++;
+//		size--;
+//	}
 }

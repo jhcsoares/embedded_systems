@@ -1,0 +1,126 @@
+Dependencies for Project 'lab5', Target 'EK-TM4C1294XL': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCompiler_5_06v7
+F (.\globals.h)(0x675E1F20)()
+F (.\main.c)(0x675ED4B9)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdbool.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/sysctl.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/pin_map.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/pwm.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/gpio.h)(0x671E68A7)
+I (clock.h)(0x675976A2)
+I (globals.h)(0x675E1F20)
+I (decoder.h)(0x675C4BE2)
+I (led.h)(0x675E1851)
+I (pwm.h)(0x675DE05A)
+I (uart_.h)(0x675989CF)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/uart.h)(0x671E68A7)
+I (gpio.h)(0x675C4DA9)
+I (i2c_.h)(0x675E099A)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/i2c.h)(0x671E68A7)
+I (keyboard.h)(0x675DE20A)
+I (ssd1306.h)(0x675E3303)
+I (sys_tick.h)(0x6759732B)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/systick.h)(0x671E68A7)
+F (.\clock.c)(0x675CEA95)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\clock.o --omf_browse .\objects\clock.crf --depend .\objects\clock.d)
+I (clock.h)(0x675976A2)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdbool.h)(0x5E8ED772)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/sysctl.h)(0x671E68A7)
+I (globals.h)(0x675E1F20)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+F (.\clock.h)(0x675976A2)()
+F (.\gpio.c)(0x675E1C3D)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\gpio.o --omf_browse .\objects\gpio.crf --depend .\objects\gpio.d)
+I (gpio.h)(0x675C4DA9)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdbool.h)(0x5E8ED772)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/gpio.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/pin_map.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/sysctl.h)(0x671E68A7)
+I (globals.h)(0x675E1F20)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+F (.\gpio.h)(0x675C4DA9)()
+F (.\led.c)(0x675E1ACB)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
+I (led.h)(0x675E1851)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdbool.h)(0x5E8ED772)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/gpio.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/sysctl.h)(0x671E68A7)
+I (globals.h)(0x675E1F20)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+I (pwm.h)(0x675DE05A)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/pwm.h)(0x671E68A7)
+F (.\led.h)(0x675E1851)()
+F (.\startup_rvmdk.S)(0x623C81B7)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129--pd "__UVISION_VERSION SETA 539" --pd "_RTE_ SETA 1" --pd "TM4C1294NCPDT SETA 1" --pd "_RTE_ SETA 1"--list .\listings\startup_rvmdk.lst --xref -o .\objects\startup_rvmdk.o --depend .\objects\startup_rvmdk.d)
+F (.\sys_tick.h)(0x6759732B)()
+F (.\sys_tick.c)(0x675DE66A)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\sys_tick.o --omf_browse .\objects\sys_tick.crf --depend .\objects\sys_tick.d)
+I (sys_tick.h)(0x6759732B)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/systick.h)(0x671E68A7)
+I (globals.h)(0x675E1F20)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+F (.\uart_.h)(0x675989CF)()
+F (.\uart_.c)(0x675DF015)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\uart_.o --omf_browse .\objects\uart_.crf --depend .\objects\uart_.d)
+I (uart_.h)(0x675989CF)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdbool.h)(0x5E8ED772)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/gpio.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/pin_map.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/sysctl.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/uart.h)(0x671E68A7)
+I (globals.h)(0x675E1F20)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+F (.\pwm.h)(0x675DE05A)()
+F (.\pwm.c)(0x675E1F5F)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\pwm.o --omf_browse .\objects\pwm.crf --depend .\objects\pwm.d)
+I (pwm.h)(0x675DE05A)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdbool.h)(0x5E8ED772)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/pwm.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/sysctl.h)(0x671E68A7)
+I (globals.h)(0x675E1F20)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+F (.\decoder.h)(0x675C4BE2)()
+F (.\decoder.c)(0x675DF003)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\decoder.o --omf_browse .\objects\decoder.crf --depend .\objects\decoder.d)
+I (decoder.h)(0x675C4BE2)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdbool.h)(0x5E8ED772)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (globals.h)(0x675E1F20)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+I (led.h)(0x675E1851)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/gpio.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/sysctl.h)(0x671E68A7)
+I (pwm.h)(0x675DE05A)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/pwm.h)(0x671E68A7)
+I (uart_.h)(0x675989CF)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/pin_map.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/uart.h)(0x671E68A7)
+F (.\keyboard.h)(0x675DE20A)()
+F (.\keyboard.c)(0x675DE985)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\keyboard.o --omf_browse .\objects\keyboard.crf --depend .\objects\keyboard.d)
+I (keyboard.h)(0x675DE20A)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdbool.h)(0x5E8ED772)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/gpio.h)(0x671E68A7)
+I (globals.h)(0x675E1F20)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+F (.\i2c_.c)(0x675E1BFA)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\i2c_.o --omf_browse .\objects\i2c_.crf --depend .\objects\i2c_.d)
+I (i2c_.h)(0x675E099A)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdbool.h)(0x5E8ED772)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/i2c.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/sysctl.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+F (.\i2c_.h)(0x675E099A)()
+F (.\ssd1306.h)(0x675E3303)()
+F (.\ssd1306.c)(0x675ED24A)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\TivaWare_C_Series-2.2.0.295 --c99-I.\RTE\_EK-TM4C1294XL-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include-IC:\Users\jhcsoares\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C129-D__UVISION_VERSION="539" -D_RTE_ -DTM4C1294NCPDT -D_RTE_-o .\objects\ssd1306.o --omf_browse .\objects\ssd1306.crf --depend .\objects\ssd1306.d)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdint.h)(0x5E8ED772)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\string.h)(0x5E8ED772)
+I (ssd1306.h)(0x675E3303)
+I (i2c_.h)(0x675E099A)
+I (C:\Keil_v5\ARM\ARMCompiler_5_06v7\include\stdbool.h)(0x5E8ED772)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/i2c.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\driverlib/sysctl.h)(0x671E68A7)
+I (..\TivaWare_C_Series-2.2.0.295\inc/hw_memmap.h)(0x671E68CD)
+I (data.h)(0x675E068B)
+F (.\data.h)(0x675E068B)()
+F (..\TivaWare_C_Series-2.2.0.295\driverlib\rvmdk\driverlib.lib)(0x672033C6)()
