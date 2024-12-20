@@ -7,6 +7,7 @@
 #include "driverlib/pin_map.h"
 #include "driverlib/pwm.h"
 #include "driverlib/gpio.h"
+#include "bitmap.h"
 #include "clock.h"
 #include "decoder.h"
 #include "gpio.h"
@@ -44,7 +45,7 @@ int main(void)
 	
 	OLED7_Init();
 	OLED7_clearDisplay();
-
+	
 	while (1)
 	{
 		// Keyboard scan
@@ -77,19 +78,29 @@ int main(void)
 		}
 		
 		// OLED0 update
-		uint8_t led_0_status = get_led0_status() + '0';
-		uint8_t led_1_status = get_led1_status() + '0';
-		uint8_t led_2_status = get_led2_status() + '0';
+		SSD1306_I2C0_cls();
 		
-		OLED0_sendStrXY("Led 0 status: ", 0, 0);
-		OLED0_sendCharXY(led_0_status, 0, 14);
+		uint8_t led_0_status = get_led0_status();
+		uint8_t led_1_status = get_led1_status();
+		uint8_t led_2_status = get_led2_status();
 		
-		OLED0_sendStrXY("Led 1 status: ", 1, 0);
-		OLED0_sendCharXY(led_1_status, 1, 14);
+		if(led_0_status)
+			SSD1306_I2C0_DrawBitmap(0, 0, check_bitmap, 24, 24);
+		else
+			SSD1306_I2C0_DrawBitmap(0, 0, close_bitmap, 24, 24);
 		
-		OLED0_sendStrXY("Led 2 status: ", 2, 0);
-		OLED0_sendCharXY(led_2_status, 2, 14);
+		if(led_1_status)
+			SSD1306_I2C0_DrawBitmap(26, 0, check_bitmap, 24, 24);
+		else
+			SSD1306_I2C0_DrawBitmap(26, 0, close_bitmap, 24, 24);
 		
+		if(led_2_status)
+			SSD1306_I2C0_DrawBitmap(54, 0, check_bitmap, 24, 24);
+		else
+			SSD1306_I2C0_DrawBitmap(54, 0, close_bitmap, 24, 24);
+		
+		SSD1306_I2C0_UpdateScreen();
+			
 		
 		// OLED7 update
 		OLED7_sendStrXYI("Duty cycle: ", 0, 0);

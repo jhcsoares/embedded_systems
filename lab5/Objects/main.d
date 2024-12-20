@@ -6,6 +6,7 @@
 .\objects\main.o: ..\TivaWare_C_Series-2.2.0.295\driverlib/pin_map.h
 .\objects\main.o: ..\TivaWare_C_Series-2.2.0.295\driverlib/pwm.h
 .\objects\main.o: ..\TivaWare_C_Series-2.2.0.295\driverlib/gpio.h
+.\objects\main.o: bitmap.h
 .\objects\main.o: clock.h
 .\objects\main.o: globals.h
 .\objects\main.o: decoder.h

@@ -505,6 +505,11 @@
               <FileType>5</FileType>
               <FilePath>.\data.h</FilePath>
             </File>
+            <File>
+              <FileName>bitmap.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\bitmap.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
